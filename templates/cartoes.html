@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Cartões</h1>
+
+<form method="POST" action="/add_cartao">
+    <input name="nome" placeholder="Operadora">
+    <input name="bandeira" placeholder="Bandeira">
+    <button>Adicionar</button>
+</form>
+
+<ul>
+{% for c in dados %}
+    <li>{{ c.nome_operadora }} - {{ c.bandeira }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
